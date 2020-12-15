@@ -26,5 +26,5 @@ int main(void)
 	sodium_bin2hex(hex, HEXLEN, hash, sizeof hash);
 	puts(hex);
 	free(s);
-	return 0;
+	return ferror(stdin);
 }
