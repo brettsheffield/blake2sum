@@ -20,16 +20,9 @@ src:
 
 clean realclean:
 	cd src && $(MAKE) $@
-	cd test && $(MAKE) $@
 
 sparse: clean
 	CC=cgcc $(MAKE) src
 
 clang: clean
 	CC=clang $(MAKE) src
-
-check test sanitize: src
-	cd test && $(MAKE) $@
-
-%.test %.check: modules
-	cd test && $(MAKE) -B $@
